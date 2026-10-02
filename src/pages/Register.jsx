@@ -6,9 +6,7 @@ import toast, { Toaster } from 'react-hot-toast'
 function Register() {
 
   const [name, setName] = useState('')
-
   const [email, setEmail] = useState('')
-
   const [password, setPassword] = useState('')
 
   const navigate = useNavigate()
@@ -40,23 +38,19 @@ function Register() {
 
   return (
 
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
 
       <Toaster />
 
-      <div className="bg-white p-10 rounded-2xl shadow-lg w-full max-w-md flex flex-col items-center gap-4">
+      <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-lg w-full max-w-md flex flex-col items-center gap-4">
 
         {/* Logo */}
         <div className="bg-yellow-400 px-6 py-2 rounded-xl">
-
-          <span className="font-extrabold text-2xl">
-            blinkit
-          </span>
-
+          <span className="font-extrabold text-2xl">blinkit</span>
         </div>
 
         {/* Heading */}
-        <h1 className="text-3xl font-extrabold text-gray-900">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center">
           Create Account
         </h1>
 

@@ -38,9 +38,9 @@ const Orders = () => {
 
   return (
 
-    <div className='max-w-5xl mx-auto p-6'>
+    <div className='max-w-5xl mx-auto p-4 sm:p-6'>
 
-      <h1 className='text-3xl font-bold mb-8'>
+      <h1 className='text-2xl sm:text-3xl font-bold mb-8'>
         My Orders
       </h1>
 
@@ -48,11 +48,9 @@ const Orders = () => {
         orders.length === 0 ? (
 
           <div className='text-center mt-20'>
-
             <h2 className='text-2xl font-semibold text-gray-500'>
               No Orders Yet
             </h2>
-
           </div>
 
         ) : (
@@ -67,74 +65,53 @@ const Orders = () => {
                   className='border border-gray-200 rounded-xl p-5 shadow-sm'
                 >
 
-                  <div className='mb-4 flex justify-between items-center'>
-
+                  <div className='mb-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1'>
                     <h2 className='text-lg font-bold'>
                       Order #{order._id.slice(-8)}
                     </h2>
-
                     <p className='text-green-600 font-semibold capitalize'>
                       {order.status}
                     </p>
-
                   </div>
 
                   <div className='space-y-4'>
-
                     {
                       order.items.map((item, index) => (
-
                         <div
                           key={index}
-                          className='flex items-center justify-between'
+                          className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2'
                         >
-
-                          <div className='flex items-center gap-4'>
-
+                          <div className='flex items-center gap-4 min-w-0'>
                             <img
                               src={item.product?.image}
                               alt={item.product?.name}
-                              className='w-16 h-16 object-cover bg-gray-50 rounded-lg p-2'
+                              className='w-16 h-16 object-cover bg-gray-50 rounded-lg p-2 flex-shrink-0'
                               onError={(e) => {
-                                e.target.src =
-                                  'https://placehold.co/100x100?text=Product'
+                                e.target.src = 'https://placehold.co/100x100?text=Product'
                               }}
                             />
-
-                            <div>
-
-                              <h3 className='font-semibold'>
+                            <div className='min-w-0'>
+                              <h3 className='font-semibold truncate'>
                                 {item.product?.name}
                               </h3>
-
                               <p className='text-sm text-gray-500'>
                                 Quantity: {item.quantity}
                               </p>
-
                             </div>
-
                           </div>
-
                           <p className='font-bold'>
                             ₹{item.price * item.quantity}
                           </p>
-
                         </div>
                       ))
                     }
-
                   </div>
 
                   <div className='border-t mt-5 pt-4 flex justify-between items-center'>
-
-                    <h3 className='text-xl font-bold'>
-                      Total
-                    </h3>
-
+                    <h3 className='text-xl font-bold'>Total</h3>
                     <h3 className='text-xl font-bold text-green-600'>
                       ₹{order.totalAmount}
                     </h3>
-
                   </div>
 
                 </div>

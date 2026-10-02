@@ -24,9 +24,9 @@ function Login() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
             <Toaster />
-            <div className="bg-white p-10 rounded-2xl shadow-lg w-full max-w-md flex flex-col items-center gap-4">
+            <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-lg w-full max-w-md flex flex-col items-center gap-4">
                 
                 {/* Blinkit Logo */}
                 <div className="bg-yellow-400 px-6 py-2 rounded-xl">
@@ -34,7 +34,7 @@ function Login() {
                 </div>
 
                 {/* Heading */}
-                <h1 className="text-3xl font-extrabold text-gray-900">India's last minute app</h1>
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center">India's last minute app</h1>
                 <p className="text-gray-500">Log in or Sign up</p>
 
                 {/* Form */}
